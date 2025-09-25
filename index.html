@@ -107,6 +107,78 @@
       line-height: 1.6;
       font-size: 18px;
     }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #333;
+      color: white;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    /* Menu Links */
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+
+    /* Hamburger Icon */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px;
+    }
+
+    /* Mobile View */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #333;
+        flex-direction: column;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .nav-links a {
+        padding: 10px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
   </style>
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/4bcd123456.js" crossorigin="anonymous"></script>
@@ -115,12 +187,22 @@
   <!-- Header --> 
   <header>
     <!-- <h2>Sonam kumari</h2> -->
-    <nav>
+   <!-- Navbar -->
+  <nav class="navbar">
+    <h1>Portfolio</h1>
+    <div class="nav-links" id="navLinks">
       <a href="#home">Home</a>
-      <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
-    </nav>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div> <!-- 4 lines -->
+    </div>
+  </nav>
     <div class="social-links">
       <a href="https://github.com/ITSSONAM-0" target="_blank"><i class="btn">Github</i></a>
       <a href="https://www.linkedin.com/in/sonam-kumari-019928260/" target="_blank"><i class="btn">Linkedin</i></a>
@@ -212,6 +294,11 @@
       <a href="https://www.linkedin.com/in/sonam-kumari-019928260/" target="_blank"><i class="btn">linkedin</i></a>
     </div>
   </section>
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
 
   <!-- Footer -->
   <footer>
