@@ -107,77 +107,70 @@
       line-height: 1.6;
       font-size: 18px;
     }
-    body {
+     body {
       margin: 0;
       font-family: Arial, sans-serif;
     }
 
-    /* Navigation Bar */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      /* background: #222; */
       padding: 15px 20px;
-      color: white;
+      color: #fff;
+      position: relative;
     }
 
     .navbar h1 {
       margin: 0;
-      font-size: 22px;
     }
 
-    /* Menu Links */
     .nav-links {
       display: flex;
       gap: 20px;
     }
 
     .nav-links a {
+      color: #fff;
       text-decoration: none;
-      color: white;
-      font-size: 18px;
+      font-weight: bold;
     }
 
-    /* Hamburger Icon */
-    .hamburger {
+    /* Hamburger button */
+    .menu-icon {
       display: none;
-      flex-direction: column;
+      font-size: 28px;
       cursor: pointer;
     }
 
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background: white;
-      margin: 4px;
-    }
-
-    /* Mobile View */
+    /* Mobile style */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
         position: absolute;
         top: 60px;
-        right: 20px;
+        right: 15px;
         background: #333;
         flex-direction: column;
-        width: 200px;
+        width: 180px;
         padding: 15px;
-        border-radius: 8px;
-      }
-
-      .nav-links a {
-        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       }
 
       .nav-links.active {
         display: flex;
       }
 
-      .hamburger {
-        display: flex;
+      .menu-icon {
+        display: block;
       }
     }
+
+    
+
+
   </style>
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/4bcd123456.js" crossorigin="anonymous"></script>
@@ -187,24 +180,22 @@
   <header>
     <!-- <h2>Sonam kumari</h2> -->
    <!-- Navbar -->
-  <nav class="navbar">
-    <h1>Portfolio</h1>
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div> <!-- 4 lines -->
-    </div>
-  </nav>
+  <!-- Navbar -->
+    <nav class="navbar">
+      <h1>Portfolio</h1>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Social links -->
     <div class="social-links">
-      <a href="https://github.com/ITSSONAM-0" target="_blank"><i class="btn">Github</i></a>
-      <a href="https://www.linkedin.com/in/sonam-kumari-019928260/" target="_blank"><i class="btn">Linkedin</i></a>
+      <a href="https://github.com/ITSSONAM-0" target="_blank">Github</a>
+      <a href="https://www.linkedin.com/in/sonam-kumari-019928260/" target="_blank">LinkedIn</a>
     </div>
   </header>
 
@@ -294,10 +285,11 @@
     </div>
   </section>
   <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-  </script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+</script>
+
 
   <!-- Footer -->
   <footer>
